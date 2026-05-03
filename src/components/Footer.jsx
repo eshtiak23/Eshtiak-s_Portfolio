@@ -1,24 +1,68 @@
 function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="mx-auto w-[92%] max-w-6xl rounded-3xl border border-white/10 bg-slate-900/80 p-6 text-center shadow-2xl shadow-black/20 backdrop-blur-xl">
-      <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-        <p className="text-sm text-slate-400">
-          © {currentYear} Eshtiak Dev. All rights reserved.
-        </p>
+    <footer className="mx-auto w-[92%] max-w-7xl pb-8 pt-4">
+      <div className="grid gap-8 border-t border-[var(--border)] pt-8 md:grid-cols-3">
+        <div>
+          <h2 className="text-2xl font-black text-[var(--text-main)]">
+            <span className="bg-gradient-to-r from-fuchsia-500 to-blue-500 bg-clip-text text-transparent">
+              E
+            </span>
+            shtiak
+          </h2>
 
-        <p className="text-sm text-slate-400">
-          Built with React, Tailwind CSS, and dedication 🚀
-        </p>
+          <p className="mt-3 max-w-sm text-sm leading-7 text-[var(--text-soft)]">
+            Frontend Developer building modern and responsive web experiences
+            with passion.
+          </p>
+        </div>
 
-        <a
-          href="#home"
-          className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-bold text-white transition hover:-translate-y-1 hover:bg-white/10"
-        >
-          Back to Top ↑
-        </a>
+        <div>
+          <h3 className="font-bold text-[var(--text-main)]">Quick Links</h3>
+
+          <div className="mt-4 grid grid-cols-2 gap-2 text-sm text-[var(--text-soft)]">
+            <a href="#home" className="transition hover:text-fuchsia-500">
+              Home
+            </a>
+            <a href="#skills" className="transition hover:text-fuchsia-500">
+              Skills
+            </a>
+            <a href="#about" className="transition hover:text-fuchsia-500">
+              About
+            </a>
+            <a href="#projects" className="transition hover:text-fuchsia-500">
+              Projects
+            </a>
+            <a href="#services" className="transition hover:text-fuchsia-500">
+              Services
+            </a>
+            <a href="#contact" className="transition hover:text-fuchsia-500">
+              Contact
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 className="font-bold text-[var(--text-main)]">
+            Connect With Me
+          </h3>
+
+          <div className="mt-4 flex gap-3">
+            {["GH", "in", "X", "IG"].map((item) => (
+              <a
+                key={item}
+                href="#"
+                className="grid h-10 w-10 place-items-center rounded-xl border border-[var(--border)] bg-[var(--card-bg)] text-sm font-bold text-[var(--text-main)] transition hover:-translate-y-1 hover:text-fuchsia-500"
+              >
+                {item}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
+
+      <p className="mt-8 text-center text-sm text-[var(--text-muted)]">
+        © {new Date().getFullYear()} Eshtiak. All rights reserved.
+      </p>
     </footer>
   );
 }

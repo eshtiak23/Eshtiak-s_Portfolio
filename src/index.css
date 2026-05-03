@@ -1,1 +1,78 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Inter, system-ui, Arial, sans-serif;
+}
+
+:root {
+  --page-bg: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.86);
+  --card-soft: #f8fafc;
+  --panel-bg: rgba(255, 255, 255, 0.78);
+  --text-main: #020617;
+  --text-soft: #475569;
+  --text-muted: #64748b;
+  --border: rgba(15, 23, 42, 0.12);
+  --shadow: rgba(59, 130, 246, 0.12);
+  --input-bg: rgba(255, 255, 255, 0.9);
+}
+
+.dark {
+  --page-bg: #020617;
+  --card-bg: rgba(255, 255, 255, 0.035);
+  --card-soft: rgba(15, 23, 42, 0.65);
+  --panel-bg: rgba(2, 6, 23, 0.68);
+  --text-main: #ffffff;
+  --text-soft: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border: rgba(255, 255, 255, 0.1);
+  --shadow: rgba(168, 85, 247, 0.16);
+  --input-bg: rgba(15, 23, 42, 0.75);
+}
+
+@keyframes floatAvatar {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes rotateRing {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease both;
+}
+
+section {
+  scroll-margin-top: 130px;
+}

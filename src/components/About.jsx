@@ -2,77 +2,80 @@ function About() {
   return (
     <section
       id="about"
-      className="mx-auto mb-8 w-[92%] max-w-6xl rounded-3xl border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-black/20 backdrop-blur-xl md:p-12"
+      className="mx-auto mb-8 grid w-[92%] max-w-7xl gap-6 rounded-2xl border border-[var(--border)] bg-[var(--card-bg)] p-6 shadow-2xl shadow-[var(--shadow)] backdrop-blur-xl transition-colors duration-300 lg:grid-cols-[1fr_0.9fr] lg:p-8"
     >
-      <div className="mb-8">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-violet-400">
+      <div>
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-fuchsia-500">
           About Me
         </p>
 
-        <h2 className="text-4xl font-black tracking-tight text-white md:text-5xl">
-          I turn ideas into clean web experiences.
+        <h2 className="text-3xl font-black text-[var(--text-main)]">
+          Get to know me
         </h2>
+
+        <p className="mt-5 max-w-2xl text-sm leading-7 text-[var(--text-soft)] sm:text-base">
+          I am a passionate beginner frontend developer who enjoys building
+          clean, modern, and responsive web applications. I focus on writing
+          simple code, improving UI quality, and learning new technologies step
+          by step.
+        </p>
+
+        <ul className="mt-6 grid gap-3 text-sm text-[var(--text-soft)]">
+          <li className="flex items-center gap-3">
+            <span className="grid h-6 w-6 place-items-center rounded-full bg-fuchsia-500/10 text-fuchsia-500">
+              ✓
+            </span>
+            Clean and modern code
+          </li>
+
+          <li className="flex items-center gap-3">
+            <span className="grid h-6 w-6 place-items-center rounded-full bg-fuchsia-500/10 text-fuchsia-500">
+              ✓
+            </span>
+            Responsive and mobile-first layout
+          </li>
+
+          <li className="flex items-center gap-3">
+            <span className="grid h-6 w-6 place-items-center rounded-full bg-fuchsia-500/10 text-fuchsia-500">
+              ✓
+            </span>
+            Good performance and smooth UI
+          </li>
+
+          <li className="flex items-center gap-3">
+            <span className="grid h-6 w-6 place-items-center rounded-full bg-fuchsia-500/10 text-fuchsia-500">
+              ✓
+            </span>
+            Always learning new things
+          </li>
+        </ul>
+
+        <a
+          href="#contact"
+          className="mt-7 inline-flex items-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--card-soft)] px-6 py-3 text-sm font-bold text-[var(--text-main)] transition hover:-translate-y-1"
+        >
+          More About Me →
+        </a>
       </div>
 
-      <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 md:p-8">
-        <p className="max-w-4xl text-base leading-8 text-slate-300 md:text-lg">
-          I am a beginner frontend developer focused on building responsive,
-          modern, and user-friendly websites. I enjoy working with HTML, CSS,
-          JavaScript, and React to create real projects that improve my skills
-          step by step.
-        </p>
-
-        <p className="mt-5 max-w-4xl text-base leading-8 text-slate-300 md:text-lg">
-          My current goal is to become confident in React, improve my design
-          sense, and build a professional portfolio that shows my learning,
-          projects, and frontend development ability.
-        </p>
-
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-2xl border border-white/10 bg-slate-950/50 p-5">
-            <h3 className="text-xl font-bold text-white">Frontend</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-400">
-              HTML, CSS, JavaScript, React
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-slate-950/50 p-5">
-            <h3 className="text-xl font-bold text-white">Focus</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-400">
-              Clean UI and responsive design
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-slate-950/50 p-5">
-            <h3 className="text-xl font-bold text-white">Learning</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-400">
-              React components, hooks, and projects
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-slate-950/50 p-5">
-            <h3 className="text-xl font-bold text-white">Goal</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-400">
-              Become a strong frontend developer
-            </p>
-          </div>
+      <div className="rounded-2xl border border-[var(--border)] bg-[var(--card-soft)] p-5 shadow-lg shadow-[var(--shadow)]">
+        <div className="mb-5 flex gap-2">
+          <span className="h-3 w-3 rounded-full bg-red-400"></span>
+          <span className="h-3 w-3 rounded-full bg-yellow-400"></span>
+          <span className="h-3 w-3 rounded-full bg-green-400"></span>
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-4">
-          <a
-            href="#projects"
-            className="rounded-2xl bg-gradient-to-r from-violet-500 to-blue-500 px-6 py-4 text-sm font-bold text-white shadow-xl shadow-violet-500/25 transition hover:-translate-y-1"
-          >
-            See My Projects
-          </a>
+        <pre className="overflow-x-auto text-xs leading-7 text-[var(--text-soft)] sm:text-sm">
+{`const developer = {
+  name: "Eshtiak",
+  role: "Frontend Developer",
+  passion: "Building beautiful web experiences",
+  skills: ["React", "JavaScript", "Tailwind CSS"],
+  focus: "Clean UI and performance"
+};
 
-          <a
-            href="/resume.pdf"
-            className="rounded-2xl border border-white/10 bg-white/5 px-6 py-4 text-sm font-bold text-white transition hover:-translate-y-1 hover:bg-white/10"
-          >
-            Download Resume
-          </a>
-        </div>
+console.log(developer);`}
+        </pre>
       </div>
     </section>
   );

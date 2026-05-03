@@ -1,69 +1,53 @@
 const services = [
   {
+    icon: "</>",
     title: "Frontend Development",
-    description:
-      "I build clean and responsive website interfaces using HTML, CSS, JavaScript, and React.",
-    icon: "/images/service-frontend.png",
+    text: "Building modern, responsive, and high-performance web applications.",
   },
   {
-    title: "UI Implementation",
-    description:
-      "I convert simple designs and ideas into polished web sections with clean layout and spacing.",
-    icon: "/images/service-ui.png",
+    icon: "✦",
+    title: "UI/UX Design",
+    text: "Creating clean, attractive, and user-friendly interface designs.",
   },
   {
+    icon: "▣",
     title: "Responsive Design",
-    description:
-      "I make websites look good on mobile, tablet, and desktop using flexible layouts.",
-    icon: "/images/service-responsive.png",
+    text: "Making websites look perfect on mobile, tablet, and desktop screens.",
   },
   {
-    title: "Performance Focused",
-    description:
-      "I write simple, organized code and avoid unnecessary complexity for better loading speed.",
-    icon: "/images/service-performance.png",
+    icon: "⚡",
+    title: "Performance Optimization",
+    text: "Improving speed, SEO, accessibility, and overall user experience.",
   },
 ];
 
 function Services() {
   return (
-    <section
-      id="services"
-      className="mx-auto mb-8 w-[92%] max-w-6xl rounded-3xl border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-black/20 backdrop-blur-xl md:p-12"
-    >
-      <div className="mb-8">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-violet-400">
-          Services
-        </p>
+    <section id="services" className="mx-auto mb-8 w-[92%] max-w-7xl">
+      <p className="mb-2 text-xs font-bold uppercase tracking-[0.25em] text-fuchsia-500">
+        Services
+      </p>
 
-        <h2 className="text-4xl font-black tracking-tight text-white md:text-5xl">
-          What I can help you build.
-        </h2>
+      <h2 className="mb-6 text-3xl font-black text-[var(--text-main)]">
+        What I do
+      </h2>
 
-        <p className="mt-4 max-w-3xl text-base leading-8 text-slate-300">
-          As a beginner frontend developer, I focus on practical, clean, and
-          responsive web interfaces that are easy to use and easy to maintain.
-        </p>
-      </div>
-
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {services.map((service) => (
           <article
             key={service.title}
-            className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 transition hover:-translate-y-1 hover:bg-white/[0.06]"
+            className="rounded-2xl border border-[var(--border)] bg-[var(--card-bg)] p-6 shadow-xl shadow-[var(--shadow)] backdrop-blur-xl transition hover:-translate-y-1 hover:border-fuchsia-500/50"
           >
-            <div className="mb-6 grid h-16 w-16 place-items-center rounded-2xl border border-white/10 bg-slate-950/60">
-              <img
-                src={service.icon}
-                alt={`${service.title} icon`}
-                className="h-9 w-9 object-contain"
-              />
+            <div className="mb-5 grid h-12 w-12 place-items-center rounded-full border border-fuchsia-500/40 bg-fuchsia-500/10 text-xl font-black text-fuchsia-500">
+              {service.icon}
             </div>
 
-            <h3 className="text-2xl font-black text-white">{service.title}</h3>
+            <h3 className="text-lg font-black text-[var(--text-main)]">
+              {service.title}
+            </h3>
 
-            <p className="mt-4 text-base leading-8 text-slate-300">
-              {service.description}
+            <p className="mt-3 text-sm leading-7 text-[var(--text-soft)]">
+              {service.text}
             </p>
           </article>
         ))}

@@ -1,121 +1,183 @@
+import { useEffect, useState } from "react";
+
+const profession = "Frontend Developer";
+
 function Hero() {
+  const [visibleLetters, setVisibleLetters] = useState(0);
+
+  useEffect(() => {
+    let letterInterval;
+    let restartTimeout;
+
+    const animateText = () => {
+      setVisibleLetters(0);
+      let index = 0;
+
+      letterInterval = setInterval(() => {
+        index += 1;
+        setVisibleLetters(index);
+
+        if (index >= profession.length) {
+          clearInterval(letterInterval);
+          restartTimeout = setTimeout(animateText, 1400);
+        }
+      }, 70);
+    };
+
+    animateText();
+
+    return () => {
+      clearInterval(letterInterval);
+      clearTimeout(restartTimeout);
+    };
+  }, []);
+
   return (
     <section
       id="home"
-      className="mx-auto mb-8 grid min-h-[620px] w-[92%] max-w-6xl items-center gap-12 overflow-hidden rounded-3xl border border-slate-200 bg-white/80 p-8 shadow-2xl shadow-blue-500/10 backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/80 dark:shadow-black/20 md:grid-cols-[1.1fr_0.9fr] md:p-12"
+      className="mx-auto grid w-[92%] max-w-7xl items-center gap-12 pb-12 pt-8 lg:grid-cols-[1fr_0.9fr] lg:pb-20"
     >
-      <div>
-        <div className="mb-6 flex w-fit items-center gap-3 rounded-full border border-slate-200 bg-slate-100 px-4 py-2 text-sm text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
-          <span className="h-2.5 w-2.5 rounded-full bg-green-500 shadow-[0_0_16px_#22c55e]"></span>
-          Available for opportunities
-        </div>
+      {/* Left Content */}
+      <div className="animate-fade-up">
+        <p className="mb-4 text-lg font-semibold text-fuchsia-500">
+          Hello, I&apos;m
+        </p>
 
-        <h1 className="mb-6 text-5xl font-black leading-tight tracking-tight text-slate-950 dark:text-white md:text-7xl">
-          Hi, I&apos;m{" "}
-          <span className="bg-gradient-to-r from-violet-500 to-blue-500 bg-clip-text text-transparent">
-            Eshtiak
-          </span>{" "}
-          —
-          <br />
-          Beginner Frontend Developer
+        <h1 className="text-5xl font-black leading-tight tracking-tight text-[var(--text-main)] sm:text-6xl lg:text-7xl">
+          Eshtiak Ahmed
         </h1>
 
-        <p className="max-w-xl text-base leading-8 text-slate-600 dark:text-slate-300 md:text-lg">
-          I build responsive, user-friendly websites with clean code and modern
-          technologies. I am passionate about turning ideas into beautiful web
-          experiences.
+        <h2 className="mt-4 flex min-h-[48px] flex-wrap gap-[2px] text-3xl font-black sm:text-4xl lg:text-5xl">
+          {profession.split("").map((letter, index) => (
+            <span
+              key={index}
+              className={`inline-block transition-all duration-500 ${
+                index < visibleLetters
+                  ? "translate-y-0 scale-100 opacity-100 blur-0"
+                  : "translate-y-4 scale-95 opacity-0 blur-sm"
+              } ${
+                letter === " "
+                  ? "w-3"
+                  : "bg-gradient-to-r from-fuchsia-500 to-blue-500 bg-clip-text text-transparent"
+              }`}
+              style={{ transitionDelay: `${index * 15}ms` }}
+            >
+              {letter === " " ? "\u00A0" : letter}
+            </span>
+          ))}
+
+          <span className="ml-1 h-10 w-[3px] animate-pulse rounded-full bg-fuchsia-500"></span>
+        </h2>
+
+        <p className="mt-6 max-w-xl text-base leading-8 text-[var(--text-soft)]">
+          I build responsive, user-friendly, and modern websites with clean
+          code, smooth UI, and strong attention to detail.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-4">
           <a
             href="#projects"
-            className="rounded-2xl bg-gradient-to-r from-violet-500 to-blue-500 px-6 py-4 text-sm font-bold text-white shadow-xl shadow-violet-500/25 transition hover:-translate-y-1"
+            className="rounded-xl bg-gradient-to-r from-fuchsia-500 to-blue-500 px-6 py-4 text-sm font-bold text-white shadow-xl shadow-violet-500/25 transition hover:-translate-y-1"
           >
             View Projects →
           </a>
 
           <a
-            href="#contact"
-            className="rounded-2xl border border-slate-200 bg-slate-100 px-6 py-4 text-sm font-bold text-slate-950 transition hover:-translate-y-1 hover:bg-slate-200 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
+            href="/resume.pdf"
+            className="rounded-xl border border-[var(--border)] bg-[var(--card-bg)] px-6 py-4 text-sm font-bold text-[var(--text-main)] transition hover:-translate-y-1"
           >
-            Contact Me
+            Download Resume ↓
           </a>
         </div>
 
-        <div className="mt-10 grid grid-cols-2 gap-5 md:grid-cols-4">
-          <div className="border-l border-slate-200 pl-4 dark:border-white/10">
-            <h3 className="text-lg font-bold text-slate-950 dark:text-white">
-              0+
-            </h3>
-            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-              Years Learning
-            </p>
-          </div>
-
-          <div className="border-l border-slate-200 pl-4 dark:border-white/10">
-            <h3 className="text-lg font-bold text-slate-950 dark:text-white">
-              10+
-            </h3>
-            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-              Projects Built
-            </p>
-          </div>
-
-          <div className="border-l border-slate-200 pl-4 dark:border-white/10">
-            <h3 className="text-lg font-bold text-slate-950 dark:text-white">
-              100+
-            </h3>
-            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-              Hours of Code
-            </p>
-          </div>
-
-          <div className="border-l border-slate-200 pl-4 dark:border-white/10">
-            <h3 className="text-lg font-bold text-slate-950 dark:text-white">
-              Always
-            </h3>
-            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-              Learning
-            </p>
-          </div>
+        <div className="mt-8 grid max-w-2xl grid-cols-2 gap-4 rounded-2xl border border-[var(--border)] bg-[var(--card-bg)] p-5 shadow-2xl shadow-[var(--shadow)] sm:grid-cols-4">
+          <Stat number="0+" label="Years Learning" />
+          <Stat number="10+" label="Projects Built" />
+          <Stat number="100+" label="Hours of Code" />
+          <Stat number="Always" label="Learning" />
         </div>
       </div>
 
-      <div className="relative grid min-h-[420px] place-items-center">
-        <div className="absolute h-80 w-80 rounded-full bg-violet-500/20 blur-3xl dark:bg-violet-500/30"></div>
-        <div className="absolute h-64 w-64 rounded-full border border-violet-400/30"></div>
+      {/* Right Premium Avatar */}
+      <div className="relative flex min-h-[390px] items-center justify-center lg:min-h-[520px]">
+        {/* Background glow */}
+        <div className="absolute h-[280px] w-[280px] rounded-full bg-fuchsia-500/20 blur-3xl sm:h-[380px] sm:w-[380px]"></div>
+        <div className="absolute right-8 top-10 h-28 w-28 rounded-full bg-blue-500/20 blur-2xl"></div>
+        <div className="absolute bottom-10 left-8 h-28 w-28 rounded-full bg-fuchsia-500/20 blur-2xl"></div>
 
-        <img
-          src="/images/avatar.png"
-          alt="Eshtiak frontend developer avatar"
-          className="relative z-10 w-[78%] max-w-sm drop-shadow-2xl"
-        />
+        {/* Rotating orbit ring */}
+        <div
+          className="absolute h-[300px] w-[300px] rounded-full border border-blue-400/20 sm:h-[390px] sm:w-[390px]"
+          style={{ animation: "rotateRing 18s linear infinite" }}
+        ></div>
 
-        <img
-          src="/images/react.png"
-          alt="React"
-          className="absolute left-4 top-14 z-20 h-14 w-14 rounded-2xl border border-slate-200 bg-white/80 p-3 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/80"
-        />
+        {/* Premium card */}
+        <div className="relative z-10 rounded-[2rem] border border-[var(--border)] bg-[var(--card-bg)] p-4 shadow-2xl shadow-[var(--shadow)] backdrop-blur-xl">
+          <div className="relative overflow-hidden rounded-[1.6rem] border border-[var(--border)] bg-[var(--card-soft)] p-5">
+            {/* Inner glow */}
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(217,70,239,0.18),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.16),transparent_35%)]"></div>
 
-        <img
-          src="/images/css.png"
-          alt="CSS"
-          className="absolute bottom-24 left-0 z-20 h-14 w-14 rounded-2xl border border-slate-200 bg-white/80 p-3 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/80"
-        />
+            {/* Avatar circle */}
+            <div
+              className="relative mx-auto flex h-[240px] w-[240px] items-end justify-center overflow-hidden rounded-full border border-fuchsia-500/30 bg-[radial-gradient(circle_at_top,#1e293b_0%,#0f172a_58%,#020617_100%)] shadow-[0_0_0_8px_rgba(255,255,255,0.035),0_0_65px_rgba(168,85,247,0.22)] sm:h-[310px] sm:w-[310px]"
+              style={{ animation: "floatAvatar 6s ease-in-out infinite" }}
+            >
+              <div className="absolute inset-3 rounded-full border border-white/10"></div>
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#020617]/80 to-transparent"></div>
 
-        <img
-          src="/images/html.png"
-          alt="HTML"
-          className="absolute right-4 top-28 z-20 h-14 w-14 rounded-2xl border border-slate-200 bg-white/80 p-3 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/80"
-        />
+              <img
+                src="/images/avatar.png"
+                alt="Eshtiak Ahmed"
+                className="relative z-10 h-[92%] w-auto object-contain drop-shadow-[0_24px_50px_rgba(0,0,0,0.45)]"
+              />
+            </div>
 
-        <img
-          src="/images/javascript.png"
-          alt="JavaScript"
-          className="absolute bottom-16 right-14 z-20 h-14 w-14 rounded-2xl border border-slate-200 bg-white/80 p-3 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/80"
-        />
+            {/* Info card */}
+            <div className="relative mt-5 rounded-2xl border border-[var(--border)] bg-[var(--panel-bg)] px-5 py-4 shadow-xl shadow-[var(--shadow)] backdrop-blur-xl">
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-base font-black text-[var(--text-main)]">
+                    Eshtiak Ahmed
+                  </p>
+                  <p className="mt-1 text-xs text-[var(--text-soft)]">
+                    Frontend Developer
+                  </p>
+                </div>
+
+                <span className="rounded-full bg-green-500/10 px-3 py-1 text-xs font-bold text-green-500">
+                  Available
+                </span>
+              </div>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                {["React", "JavaScript", "Tailwind"].map((skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-full border border-[var(--border)] bg-[var(--card-bg)] px-3 py-1 text-xs font-semibold text-[var(--text-soft)]"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Floating mini badge */}
+            <div className="absolute right-5 top-5 rounded-full border border-fuchsia-500/30 bg-slate-950/80 px-4 py-2 text-xs font-semibold text-fuchsia-300 shadow-lg shadow-fuchsia-500/10 backdrop-blur-xl">
+              &lt;/&gt; UI Builder
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+  );
+}
+
+function Stat({ number, label }) {
+  return (
+    <div>
+      <h3 className="text-xl font-black text-[var(--text-main)]">{number}</h3>
+      <p className="mt-1 text-xs text-[var(--text-muted)]">{label}</p>
+    </div>
   );
 }
 
