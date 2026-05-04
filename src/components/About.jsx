@@ -14,10 +14,7 @@ function About() {
         </h2>
 
         <p className="mt-5 max-w-2xl text-sm leading-7 text-[var(--text-soft)] sm:text-base">
-          I am a passionate beginner frontend developer who enjoys building
-          clean, modern, and responsive web applications. I focus on writing
-          simple code, improving UI quality, and learning new technologies step
-          by step.
+         I’m a frontend developer who loves creating modern, responsive, and user-friendly web experiences. My focus is on clean code, polished UI design, smooth interactions, and continuous improvement—turning simple ideas into practical, visually appealing digital products.
         </p>
 
         <ul className="mt-6 grid gap-3 text-sm text-[var(--text-soft)]">
@@ -70,7 +67,7 @@ function About() {
   name: "Eshtiak",
   role: "Frontend Developer",
   passion: "Building beautiful web experiences",
-  skills: ["React", "JavaScript", "Tailwind CSS"],
+  skills: ["React", "JavaScript", "Tailwind CSS", "HTML"],
   focus: "Clean UI and performance"
 };
 

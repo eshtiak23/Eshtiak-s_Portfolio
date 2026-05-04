@@ -1,17 +1,19 @@
 const education = [
   {
     date: "2022 - Present",
-    title: "Diploma in Computer Engineering",
-    place: "Your Polytechnic Institute",
+    title: "Diploma in Computer Science & Technology",
+    place: "Rajshahi Polytechnic Institute",
     status: "Currently Studying",
+    results: "Running",
     text: "Learning computer engineering subjects along with web development, programming, database, networking, and practical project building.",
   },
   {
     date: "2020 - 2022",
-    title: "Secondary School Certificate",
-    place: "Your School Name",
+    title: "Secondary School Certificate (SSC)",
+    place: "Sharojgonj Govt. High School",
     status: "Completed",
-    text: "Completed SSC with a strong foundation in science, ICT, mathematics, and problem-solving basics.",
+    results: "GPA: 5.00 out of 5.00",
+    text: "Completed SSC with a strong foundation in Science, ICT, Mathematics, and problem-solving basics.",
   },
 ];
 
@@ -56,9 +58,17 @@ function Resume() {
                 </p>
               </div>
 
-              <span className="w-fit rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-xs font-bold text-blue-500">
-                {item.status}
-              </span>
+              <div className="flex flex-wrap gap-3 lg:justify-end">
+                {item.results && (
+                  <span className="w-fit rounded-full border border-fuchsia-500/30 bg-fuchsia-500/10 px-4 py-2 text-xs font-bold text-fuchsia-500">
+                    {item.results}
+                  </span>
+                )}
+
+                <span className="w-fit rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-xs font-bold text-blue-500">
+                  {item.status}
+                </span>
+              </div>
             </div>
 
             <p className="mt-4 max-w-3xl text-sm leading-7 text-[var(--text-soft)]">

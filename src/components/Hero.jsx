@@ -99,8 +99,10 @@ function Hero() {
       </div>
 
       {/* Right Premium Avatar */}
+
       <div className="relative flex min-h-[390px] items-center justify-center lg:min-h-[520px]">
         {/* Background glow */}
+
         <div className="absolute h-[280px] w-[280px] rounded-full bg-fuchsia-500/20 blur-3xl sm:h-[380px] sm:w-[380px]"></div>
         <div className="absolute right-8 top-10 h-28 w-28 rounded-full bg-blue-500/20 blur-2xl"></div>
         <div className="absolute bottom-10 left-8 h-28 w-28 rounded-full bg-fuchsia-500/20 blur-2xl"></div>
@@ -126,13 +128,14 @@ function Hero() {
               <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#020617]/80 to-transparent"></div>
 
               <img
-                src="/images/avatar.png"
+                src="/images/avatar3.png"
                 alt="Eshtiak Ahmed"
-                className="relative z-10 h-[92%] w-auto object-contain drop-shadow-[0_24px_50px_rgba(0,0,0,0.45)]"
+                className="relative z-10 h-[92%] w-auto object-contain drop-shadow-[0_26px_52px_rgba(0,0,0,0.45)]"
               />
             </div>
 
             {/* Info card */}
+
             <div className="relative mt-5 rounded-2xl border border-[var(--border)] bg-[var(--panel-bg)] px-5 py-4 shadow-xl shadow-[var(--shadow)] backdrop-blur-xl">
               <div className="flex items-center justify-between gap-4">
                 <div>
@@ -150,7 +153,7 @@ function Hero() {
               </div>
 
               <div className="mt-4 flex flex-wrap gap-2">
-                {["React", "JavaScript", "Tailwind"].map((skill) => (
+                {["React", "JavaScript", "Tailwind", "HTML"].map((skill) => (
                   <span
                     key={skill}
                     className="rounded-full border border-[var(--border)] bg-[var(--card-bg)] px-3 py-1 text-xs font-semibold text-[var(--text-soft)]"
@@ -162,7 +165,8 @@ function Hero() {
             </div>
 
             {/* Floating mini badge */}
-            <div className="absolute right-5 top-5 rounded-full border border-fuchsia-500/30 bg-slate-950/80 px-4 py-2 text-xs font-semibold text-fuchsia-300 shadow-lg shadow-fuchsia-500/10 backdrop-blur-xl">
+            
+            <div className="absolute right-5 top-5 rounded-full border border-fuchsia-500/30 bg-slate-950/80 px-4 py-2 text-xs font-semibold text-fuchsia-300 shadow-lg shadow-fuchsia-500/12 backdrop-blur-xl">
               &lt;/&gt; UI Builder
             </div>
           </div>
