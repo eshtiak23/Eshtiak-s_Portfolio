@@ -9,7 +9,7 @@ const skills = [
   },
   {
     name: "JavaScript",
-    icon: "/skills/javascript.png",
+    icon: "/skills/javascript.gif",
   },
   {
     name: "React",
