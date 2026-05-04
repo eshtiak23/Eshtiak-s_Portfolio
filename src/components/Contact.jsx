@@ -13,8 +13,8 @@ const contactInfo = [
   },
   {
     label: "Location",
-    value: "Bangladesh",
-    href: "#",
+    value: "Rajshahi, Bangladesh",
+    href: "https://www.google.com/maps?sca_esv=3952bdc93efbafc6&output=search&q=Rajshahi+Bangladesh%5C&source=lnms&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3j2nXl-YQ05KjnWz5SrU93HEjYyChsjChlPh8hoCFXOKGKdIkdWV9Y1jIT6MO4-1nGlfchNIc5D-klC_exTOWrKJUmfC5klXcK__73Ns0SCZhaIY93KBKk281c1P_LA7uUnNfbKk-DnhWx-72xx5AZRHqCEU&entry=mc&ved=1t:200715&ictx=111",
     icon: "⌖",
   },
 ];
@@ -86,15 +86,19 @@ function Contact() {
 
           <div className="flex flex-wrap gap-3">
             <a
-              href="#"
+              href="https://github.com/eshtiak23"
               className="rounded-xl border border-[var(--border)] bg-[var(--card-soft)] px-5 py-3 text-sm font-bold text-[var(--text-main)] transition hover:-translate-y-1 hover:text-fuchsia-500"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               GitHub
             </a>
 
             <a
-              href="#"
+              href="https://www.linkedin.com/in/eshtiak23/"
               className="rounded-xl border border-[var(--border)] bg-[var(--card-soft)] px-5 py-3 text-sm font-bold text-[var(--text-main)] transition hover:-translate-y-1 hover:text-blue-500"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               LinkedIn
             </a>
@@ -102,6 +106,8 @@ function Contact() {
             <a
               href="mailto:eshtiak4099@gmail.com"
               className="rounded-xl border border-[var(--border)] bg-[var(--card-soft)] px-5 py-3 text-sm font-bold text-[var(--text-main)] transition hover:-translate-y-1 hover:text-fuchsia-500"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Email Me
             </a>

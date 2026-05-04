@@ -1,18 +1,27 @@
 const projects = [
   {
-    title: "TaskFlow",
-    text: "A task management app to organize work and boost productivity.",
-    tags: ["React", "Tailwind CSS", "LocalStorage"],
+    title: "Department Management System",
+    text: "A department management app to organize students & teachers and boost productivity.",
+    thumbnail: "projects/department.png",
+    tags: ["HTML", "Tailwind CSS", "JavaScript", "Supabase"],
+    live: "https://eshtiak23.github.io/RPI-Computer-Department-Management-System-/",
+    code: "https://github.com/eshtiak23/RPI-Computer-Department-Management-System-",
   },
   {
-    title: "Shoply",
-    text: "An ecommerce website with modern UI and smooth experience.",
-    tags: ["React", "API", "Stripe"],
+    title: "AKATSUKI Bounty Hunter",
+    text: "A theme based website where users can browse and submit bounty requests & see profiles of Naruto characters.",
+    thumbnail: "projects/akatsuki.png",
+    tags: ["HTML", "Tailwind CSS", "JavaScript"],
+    live: "#",
+    code: "#",
   },
   {
-    title: "Weather App",
-    text: "A weather app that shows real-time weather updates.",
-    tags: ["React", "API", "CSS3"],
+    title: "Digital Clock Weather App",
+    text: "A digital clock and weather app that shows real-time weather updates.",
+    thumbnail: "projects/weather-clock.png",
+    tags: ["HTML", "Tailwind CSS", "JavaScript"],
+    live: "#",
+    code: "#",
   },
 ];
 
@@ -20,47 +29,59 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="mx-auto mb-8 w-[92%] max-w-7xl rounded-2xl border border-[var(--border)] bg-[var(--card-bg)] p-6 shadow-2xl shadow-[var(--shadow)] backdrop-blur-xl transition-colors duration-300 lg:p-8"
+      className="mx-auto mb-8 w-[92%] max-w-7xl rounded-2xl border border-[var(--border)] bg-[var(--card-bg)] p-4 shadow-2xl shadow-[var(--shadow)] backdrop-blur-xl transition-colors duration-300 sm:p-6 lg:p-8"
     >
-      <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="mb-2 text-xs font-bold uppercase tracking-[0.25em] text-fuchsia-500">
             Projects
           </p>
 
-          <h2 className="text-3xl font-black text-[var(--text-main)]">
+          <h2 className="text-2xl font-black text-[var(--text-main)] sm:text-3xl">
             My Recent Projects
           </h2>
         </div>
 
         <a
           href="#contact"
-          className="w-fit rounded-xl border border-[var(--border)] bg-[var(--card-soft)] px-5 py-3 text-sm font-bold text-[var(--text-main)] transition hover:-translate-y-1"
+          className="w-fit rounded-xl border border-[var(--border)] bg-[var(--card-soft)] px-4 py-2.5 text-xs font-bold text-[var(--text-main)] transition duration-300 hover:-translate-y-1 hover:border-fuchsia-500/50 sm:px-5 sm:py-3 sm:text-sm"
         >
           View All Projects →
         </a>
       </div>
 
-      <div className="grid gap-5 lg:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
         {projects.map((project, index) => (
           <article
             key={project.title}
-            className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card-soft)] shadow-lg shadow-[var(--shadow)] transition hover:-translate-y-1 hover:border-fuchsia-500/50"
+            className="group overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--card-soft)] shadow-lg shadow-[var(--shadow)] transition duration-300 hover:-translate-y-1 hover:border-fuchsia-500/50 sm:rounded-2xl"
           >
-            <div className="h-44 bg-[radial-gradient(circle_at_30%_20%,rgba(168,85,247,0.45),transparent_30%),radial-gradient(circle_at_80%_70%,rgba(59,130,246,0.45),transparent_35%),linear-gradient(135deg,#0f172a,#020617)] p-5">
-              <div className="flex h-full items-end rounded-xl border border-white/10 bg-white/5 p-4">
-                <p className="text-2xl font-black text-white">
-                  0{index + 1}
+            <div className="relative h-36 overflow-hidden bg-slate-950 sm:h-44">
+              <img
+                src={project.thumbnail}
+                alt={`${project.title} thumbnail`}
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+              <div className="absolute left-3 top-3 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-bold text-white backdrop-blur-md">
+                0{index + 1}
+              </div>
+
+              <div className="absolute bottom-3 left-3 right-3">
+                <p className="line-clamp-1 text-sm font-black text-white sm:text-base">
+                  {project.title}
                 </p>
               </div>
             </div>
 
-            <div className="p-5">
-              <h3 className="text-xl font-black text-[var(--text-main)]">
+            <div className="p-4 sm:p-5">
+              <h3 className="text-lg font-black text-[var(--text-main)] sm:text-xl">
                 {project.title}
               </h3>
 
-              <p className="mt-3 text-sm leading-7 text-[var(--text-soft)]">
+              <p className="mt-2 line-clamp-3 text-xs leading-6 text-[var(--text-soft)] sm:mt-3 sm:text-sm sm:leading-7">
                 {project.text}
               </p>
 
@@ -68,19 +89,29 @@ function Projects() {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-[var(--border)] bg-[var(--card-bg)] px-3 py-1 text-xs text-[var(--text-soft)]"
+                    className="rounded-full border border-[var(--border)] bg-[var(--card-bg)] px-2.5 py-1 text-[10px] font-medium text-[var(--text-soft)] sm:px-3 sm:text-xs"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
 
-              <div className="mt-5 flex gap-4 text-sm font-bold text-[var(--text-main)]">
-                <a href="#" className="transition hover:text-fuchsia-500">
+              <div className="mt-5 flex gap-4 text-xs font-bold text-[var(--text-main)] sm:text-sm">
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-fuchsia-500"
+                >
                   Live Demo
                 </a>
 
-                <a href="#" className="transition hover:text-fuchsia-500">
+                <a
+                  href={project.code}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-fuchsia-500"
+                >
                   Code
                 </a>
               </div>

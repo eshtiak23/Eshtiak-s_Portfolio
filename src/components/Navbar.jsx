@@ -80,13 +80,16 @@ function Navbar({ isDark, setIsDark }) {
             className="group flex shrink-0 items-center"
             aria-label="Go to home"
           >
-            <div className="relative grid h-12 w-12 place-items-center rounded-2xl border border-white/10 bg-gradient-to-br from-fuchsia-500 via-violet-500 to-blue-500 text-white shadow-lg shadow-violet-500/30 transition duration-300 group-hover:scale-105 group-hover:rotate-3">
-              <span className="text-xl font-black tracking-tight">E</span>
+            
+            <div className="relative grid h-12 w-12 place-items-center overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-fuchsia-500/20 via-violet-500/20 to-blue-500/20 shadow-lg shadow-violet-500/30 transition duration-300 group-hover:scale-105 group-hover:rotate-3 sm:h-13 sm:w-13">
+  <img
+    src="/logo1.png"
+    alt="Eshtiak logo"
+    className="h-full w-full object-cover"
+  />
+</div>
+              
 
-              <span className="absolute -bottom-1 -right-1 rounded-full border border-white/15 bg-slate-950 px-1.5 py-[2px] text-[8px] font-bold leading-none text-fuchsia-300 shadow-md">
-                &lt;/&gt;
-              </span>
-            </div>
           </a>
 
           {/* Desktop Nav */}
@@ -209,12 +212,16 @@ function Navbar({ isDark, setIsDark }) {
             onClick={() => handleLinkClick("home")}
             className="flex items-center gap-3"
           >
-            <div className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-fuchsia-500 to-blue-500 text-lg font-black text-white">
-              E
-            </div>
+            <div className="relative grid h-12 w-12 place-items-center overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-fuchsia-500/20 via-violet-500/20 to-blue-500/20 shadow-lg shadow-violet-500/30 transition duration-300 group-hover:scale-105 group-hover:rotate-3 sm:h-13 sm:w-13">
+  <img
+    src="/logo1.png"
+    alt="Eshtiak logo"
+    className="h-full w-full object-cover"
+  />
+</div>
 
             <div>
-              <h2 className="text-base font-black text-white">Eshtiak</h2>
+              <h2 className="text-base font-black text-white">Eshtiak </h2>
               <p className="text-xs font-medium text-white/50">
                 Frontend Developer
               </p>
